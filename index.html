@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Skillshot Trainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="tutorial" class="screen tutorial-screen">
+    <div class="tutorial-content">
+      <h1>SKILLSHOT TRAINER</h1>
+      <p class="tutorial-text">Merhabalar, oyunda amaç Q tuşu ile mermi atıp daireleri ortaya ulaşmadan vurmak bol şans!</p>
+      <button id="startBtn" class="start-btn">Oyuna Başla</button>
+    </div>
+    <div class="leaderboard">
+      <h2>🏆 EN İYİ 10 REKOR</h2>
+      <div id="leaderboardList" class="leaderboard-list">
+        <p class="no-records">Henüz rekor yok...</p>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="game"></canvas>
+  <div id="timer" class="timer">00:00</div>
+  <div id="gameOverButtons" class="game-over-buttons hidden">
+    <button id="menuBtn" class="menu-btn">Ana Menü</button>
+    <button id="restartBtn" class="restart-btn">Tekrar Oyna</button>
+  </div>
+  <button id="oldRestartBtn" class="restart-btn hidden">Tekrar Oyna</button>
+  <script src="script.js"></script>
+</body>
+</html>

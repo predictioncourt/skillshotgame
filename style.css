@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: black;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.screen.hidden {
+  display: none;
+}
+
+.tutorial-screen {
+  flex-direction: column;
+  gap: 40px;
+}
+
+.tutorial-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.tutorial-content h1 {
+  font-size: 48px;
+  color: #00ff00;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+.tutorial-text {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.start-btn {
+  padding: 15px 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
+  border: 3px solid #00ff00;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 255, 0, 0.9);
+}
+
+.start-btn:active {
+  transform: scale(0.95);
+}
+
+.leaderboard {
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #ff3333;
+  box-shadow: 0 0 20px rgba(255, 51, 51, 0.5);
+}
+
+.leaderboard h2 {
+  font-size: 24px;
+  color: #ff3333;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 51, 51, 0.6);
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: rgba(255, 51, 51, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  border-left: 4px solid #ff3333;
+}
+
+.leaderboard-rank {
+  font-weight: bold;
+  color: #ff3333;
+  min-width: 30px;
+}
+
+.leaderboard-time {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.no-records {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+}
+
+.restart-btn {
+  padding: 20px 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+  border: 3px solid #ff6666;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(255, 51, 51, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.restart-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 50px rgba(255, 51, 51, 1), inset 0 0 30px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #ff5555 0%, #ff0000 100%);
+}
+
+.restart-btn:active {
+  transform: scale(0.95);
+}
+
+.restart-btn.hidden {
+  display: none;
+}
+
+.game-over-buttons {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 30px;
+  z-index: 1000;
+}
+
+.game-over-buttons.hidden {
+  display: none;
+}
+
+.menu-btn {
+  padding: 20px 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #3366ff 0%, #0033cc 100%);
+  border: 3px solid #6699ff;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(51, 102, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 50px rgba(51, 102, 255, 1);
+}
+
+.menu-btn:active {
+  transform: scale(0.95);
+}
+
+.timer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  z-index: 999;
+}
