@@ -287,7 +287,7 @@ function shoot() {
     y: player.y(),
     dx: Math.cos(angle) * 12,
     dy: Math.sin(angle) * 12,
-    life: 60
+    life: 150
   });
 }
 
@@ -412,7 +412,10 @@ function update() {
     ctx.lineTo(s.x - s.dx, s.y - s.dy);
     ctx.stroke();
 
-    if (s.life <= 0) shots.splice(i, 1);
+    // Eğer mermi ekrandan çıktıysa sil
+    if (s.x < -50 || s.x > canvas.width + 50 || s.y < -50 || s.y > canvas.height + 50 || s.life <= 0) {
+      shots.splice(i, 1);
+    }
   });
 
   // -------- ENEMIES --------
@@ -507,14 +510,16 @@ function update() {
     ctx.fill();
 
     // Collision (only if not locked)
-    shots.forEach((s, si) => {
+    for (let si = shots.length - 1; si >= 0; si--) {
+      const s = shots[si];
       const dx = s.x - e.x;
       const dy = s.y - e.y;
       if (!e.locked && Math.hypot(dx, dy) < e.r) {
         enemies.splice(ei, 1);
         shots.splice(si, 1);
+        break;
       }
-    });
+    }
   });
 
   // -------- UI --------
